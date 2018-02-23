@@ -9,14 +9,14 @@ var h1 = document.querySelector("h1");
 var easybtn = document.querySelector("#easybtn");
 var hardbtn = document.querySelector("#hardbtn");
 
+colorDisplayed.textContent = pickedColor;
+
 easybtn.addEventListener("click", function(){
     hardbtn.classList.remove("selected");
     easybtn.classList.add("selected");
     numSquares = 3;
     colors = generateRandomColors(numSquares);
-    console.log(colors);
     pickedColor = pickColor();
-    console.log(pickedColor);
     colorDisplayed.textContent = pickedColor;
     for (var i = 0; i < squares.length; i++) {
         if (colors[i]){
@@ -33,9 +33,7 @@ hardbtn.addEventListener("click", function(){
     hardbtn.classList.add("selected");
     numSquares = 6;
     colors = generateRandomColors(numSquares);
-    console.log(colors);
     pickedColor = pickColor();
-    console.log(pickedColor);
     colorDisplayed.textContent = pickedColor;
     for (var i = 0; i < squares.length; i++) {
         squares[i].style.backgroundColor = colors[i]
@@ -47,10 +45,9 @@ resetButton.addEventListener("click", function(){
     h1.style.backgroundColor = "steelblue";
     resetButton.textContent = "New Colors";
     colors = generateRandomColors(numSquares);
-    console.log(colors);
     pickedColor = pickColor();
-    console.log(pickedColor);
     colorDisplayed.textContent = pickedColor;
+    messageDisplayed.textContent = "";
     for (var i = 0; i < squares.length; i++) {
         squares[i].style.backgroundColor = colors[i]; 
     }
